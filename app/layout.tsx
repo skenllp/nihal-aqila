@@ -1,9 +1,21 @@
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = {
-  title: 'Mashoor & Mirza · Wedding Invitation · 25 July 2026',
-  description: 'Join us as we celebrate the wedding of Mashoor & Mirza on July 25, 2026 at Mehfil Auditorium, Kuttiyadi.',
+  title: 'Nihal & Aqila · Wedding Invitation · 14 November 2026',
+  description: 'Join us as we celebrate the Nikkah of Nihal & Aqila on November 14, 2026 at Town Bank Auditorium, Thalassery.',
   icons: { icon: '/assets/logo-2.png' },
+  openGraph: {
+    title: 'Nihal & Aqila · Wedding Invitation',
+    description: 'Nikkah · 14 November 2026 · Town Bank Auditorium, Thalassery',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Nihal & Aqila Wedding Invitation' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nihal & Aqila · Wedding Invitation',
+    description: 'Nikkah · 14 November 2026 · Town Bank Auditorium, Thalassery',
+    images: ['/og-image.jpg'],
+  },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en"><body>{children}</body></html>;

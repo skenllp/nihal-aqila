@@ -4,7 +4,7 @@ import { Heart, MapPin } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogTrigger, DialogClose } from '@/components/ui/dialog';
 const asset = (name: string) => `/assets/${name}.png`;
 const labels = ['DAYS', 'HOURS', 'MINUTES', 'SECONDS'];
-const weddingTime = new Date('2026-07-25T11:00:00+05:30').getTime();
+const weddingTime = new Date('2026-11-14T11:00:00+05:30').getTime();
 function remaining() {
   const seconds = Math.max(0, Math.floor((weddingTime - Date.now()) / 1000));
   return [Math.floor(seconds / 86400), Math.floor(seconds / 3600) % 24, Math.floor(seconds / 60) % 60, seconds % 60];
@@ -66,25 +66,21 @@ function Envelope() {
   </div></section>;
 }
 export default function Invitation() {
-  return <main className="paper-bg"><h1 className="sr-only">Mashoor & Mirza — Wedding Invitation</h1>
+  return <main className="paper-bg"><h1 className="sr-only">Nihal & Aqila — Wedding Invitation</h1>
     <div className="petals" aria-hidden="true">{Array.from({ length: 14 }, (_, i) => <span key={i} style={{ left: `${(i * 37 + 16) % 100}%`, width: `${9 + i % 9}px`, height: `${6 + i % 5}px`, animationDelay: `${(i * 1.7) % 12}s`, animationDuration: `${15 + i % 12}s` } as CSSProperties} />)}</div>
     <div className="invitation">
       <Fade delay={300} className="monogram"><img src={asset('logo-2')} alt="Mashoor & Mirza monogram" /></Fade>
-      <Fade delay={600} className="groom-parents"><p>S/O Mr. MUNEER OP & Mrs. SARA</p></Fade>
+      <Fade delay={600} className="groom-parents"><p>ADV. NIHAL BIN NOUSHAD<br />S/O Adv. PC NOUSHAD & Mrs. FATHIMA SHYMA</p></Fade>
       <Fade delay={900} className="names"><img src={asset('names')} alt="Mashoor & Mirza" /></Fade>
-      <Fade delay={1200} className="bride-parents"><p>D/O Mr. SATHIQUE PILAKANDY &<br />Mrs. SHABNA PK</p></Fade>
-      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop"><img src={asset('couple-pic-new')} alt="Mashoor and Mirza" /></div></div></Fade>
+      <Fade delay={1200} className="bride-parents"><p>ADV. AQILA SHERIN<br />D/O MUJEEB C K & Mrs. FOUSIYA K K</p></Fade>
+      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal & Aqila Arabic calligraphy monogram" /></div></div></Fade>
       <div className="lace-panel"><img className="lace-art" src={asset('lace3')} alt="" aria-hidden="true" /><div className="event-content">
         <Fade delay={1800} className="event-date"><img src={asset('date')} alt="July 25, 2026" /></Fade>
-        <Fade delay={2100} className="nikkah-details"><p className="event-copy">NIKKAH ON SATURDAY AT <span className="time">11:00</span> AM,<br />AT MEHFIL AUDITORIUM, KUTTIYADI</p></Fade>
-        <Fade delay={2200} className="location"><a className="invitation-button" href="https://www.google.com/maps/search/?api=1&query=Mehfil+Auditorium+Kuttiyadi" target="_blank" rel="noopener noreferrer"><MapPin size={16} strokeWidth={1.5} />NIKKAH LOCATION</a></Fade>
-        <Fade delay={2250} className="reception-intro"><p className="event-copy">FOLLOWED BY RECEPTION<br />THE NEXT DAY</p></Fade>
-        <Fade delay={2400} className="event-date reception-date"><img src={asset('date2')} alt="July 26, 2026" /></Fade>
-        <Fade delay={2550} className="reception-details"><p className="event-copy">SUNDAY <span className="time">6:00</span> PM - <span className="time">9:30</span> PM,<br />AT LAUREL GARDEN, NEW MAHE,<br />THALASSERY</p></Fade>
-        <Fade delay={2650} className="location"><a className="invitation-button" href="https://maps.app.goo.gl/ad8VTMXiLcppPLoy7?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener noreferrer"><MapPin size={16} strokeWidth={1.5} />RECEPTION LOCATION</a></Fade>
+        <Fade delay={2100} className="nikkah-details"><p className="event-copy">NIKKAH ON NOV 14, 2026 AT <span className="time">11:00</span> AM,<br />TOWN BANK AUDITORIUM, THALASSERY</p></Fade>
+        <Fade delay={2200} className="location"><a className="invitation-button" href="https://www.google.com/maps/search/?api=1&query=Town+Bank+Auditorium+Thalassery" target="_blank" rel="noopener noreferrer"><MapPin size={16} strokeWidth={1.5} />NIKKAH LOCATION</a></Fade>
         <Fade delay={2700} className="countdown-wrap"><Countdown /></Fade>
       </div></div>
-      <Fade delay={3150} className="wishes-section"><Wishes /><p>WE SEEK YOUR DUAS AND WARMLY<br />INVITE YOU TO CELEBRATE THIS<br />SPECIAL OCCASION WITH US.</p></Fade>
+      <Fade delay={3150} className="wishes-section"><Wishes /><p className="honour-text">We would be honoured by your presence and prayers as we begin this new chapter.</p><p>WE SEEK YOUR DUAS AND WARMLY<br />INVITE YOU TO CELEBRATE THIS<br />SPECIAL OCCASION WITH US.</p></Fade>
       <Fade delay={3150} className="dua"><img src={asset('dua')} alt="Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair" /></Fade>
       <Envelope />
       <Fade delay={3300} className="credit"><a href="https://www.instagram.com/loymir_?igsh=MWs1am9rbDBlbWdsMQ==" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><path d="M17.5 6.5h.01" /></svg>@LOYMIR E-INVITES</a></Fade>
