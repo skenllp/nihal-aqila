@@ -78,7 +78,7 @@ export default function Invitation() {
         <h2 className="couple-name">Adv. Aqila Sherin</h2>
       </Fade>
       <Fade delay={1200} className="parent-details bride-parents"><p>D/O MUJEEB C K &amp; Mrs. FOUSIYA K K</p></Fade>
-      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" /></div></div></Fade>
+      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-ring outermost" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" /></div></div></Fade>
       <div className="lace-panel"><img className="lace-art" src={asset('lace3')} alt="" aria-hidden="true" /><div className="event-content">
         <Fade delay={1800} className="event-date"><h3 className="event-date-text">NOVEMBER 14, 2026</h3></Fade>
         <Fade delay={2100} className="nikkah-details"><p className="event-copy">NIKKAH ON NOV 14, 2026 AT <span className="time">11:00</span> AM,<br />TOWN BANK AUDITORIUM, THALASSERY</p></Fade>
