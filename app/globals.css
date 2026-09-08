@@ -113,15 +113,26 @@ a { color: inherit; text-decoration: none; }
   box-shadow:
     0 24px 70px -20px rgba(90,58,26,.55),
     0 0 0 2px oklch(72% .12 72 / .35),
-    inset 0 0 30px rgba(255,248,235,.18);
+    inset 0 0 40px 10px rgba(245,237,220,.55),
+    inset 0 0 12px 2px rgba(180,140,70,.12);
+}
+.portrait-crop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, transparent 42%, rgba(240,229,208,.55) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 .portrait-crop img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transform: scale(1.08); }
 .calligraphy-crop img {
   aspect-ratio: 1/1;
   object-fit: cover;
-  transform: scale(1.35);
-  background: radial-gradient(ellipse at center, #fdf9f2 55%, #f0e5d4);
+  transform: scale(2.1) translateY(4%);
+  background: radial-gradient(ellipse at 55% 52%, #fdfaf5 35%, #f2e8d8 100%);
   padding: 0;
+  transform-origin: center center;
 }
 .lace-panel { position: relative; margin-top: -46.67%; width: 115%; margin-inline: -7.5%; }
 .lace-art { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; animation: soft-in 1.2s ease both; }
