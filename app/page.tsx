@@ -32,7 +32,7 @@ function Wishes() {
       localStorage.setItem('nihal-aqila-wishes', JSON.stringify([...entries, { name, wishes, createdAt: new Date().toISOString() }]));
     } catch {}
     const message = `*Wedding Wishes for Adv. Nihal & Adv. Aqila* 💍✨\n\n*From:* ${name}\n\n*Wishes:* ${wishes}`;
-    const whatsappUrl = `https://wa.me/918281081480?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919446587480?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     setSaved(true);
     setError('');
