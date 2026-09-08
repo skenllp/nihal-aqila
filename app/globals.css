@@ -50,8 +50,8 @@ a { color: inherit; text-decoration: none; }
 .portrait { position: relative; z-index: 20; display: flex; justify-content: center; margin-top: 48px; }
 .portrait-frame {
   position: relative;
-  width: 82%;
-  max-width: 300px;
+  width: 68%;
+  max-width: 240px;
 }
 /* Gold ring system */
 .portrait-ring {
@@ -118,10 +118,10 @@ a { color: inherit; text-decoration: none; }
 .portrait-crop img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transform: scale(1.08); }
 .calligraphy-crop img {
   aspect-ratio: 1/1;
-  object-fit: contain;
-  transform: scale(1.22);
-  background: radial-gradient(ellipse at center, #fdf9f2 60%, #f5ede0);
-  padding: 6%;
+  object-fit: cover;
+  transform: scale(1.35);
+  background: radial-gradient(ellipse at center, #fdf9f2 55%, #f0e5d4);
+  padding: 0;
 }
 .lace-panel { position: relative; margin-top: -46.67%; width: 115%; margin-inline: -7.5%; }
 .lace-art { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; animation: soft-in 1.2s ease both; }
@@ -201,7 +201,7 @@ a { color: inherit; text-decoration: none; }
  .location, .wishes-section { max-width: 380px; }
  .honour-text { font-size: 18.5px !important; }
  .invitation-button { font-size: 16px; }
- .portrait-frame { width: 78%; max-width: 280px; }
+ .portrait-frame { width: 64%; max-width: 230px; }
  .countdown { gap: 20px; }
  .count-tile { width: 80px; height: 80px; }
  .count-tile span { font-size: 30px; line-height: 36px; }
