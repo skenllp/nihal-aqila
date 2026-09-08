@@ -58,10 +58,10 @@ function Envelope() {
   }, []);
   return <section ref={ref} className={`envelope ${visible ? 'revealed' : ''}`} aria-label="Save the date keepsake"><div className="envelope-scene">
     <img className="envelope-layer envelope-back" src={asset('envelope-back')} alt="" />
-    <div className="envelope-piece tilted"><img src={asset('envelope-photo-tilt')} alt="Mashoor and Mirza" /></div>
-    <div className="envelope-piece oval"><img src={asset('envelope-photo-oval')} alt="Mashoor and Mirza" /></div>
-    <div className="envelope-piece badge"><img src={asset('envelope-badge')} alt="Mashoor & Mirza" /></div>
-    <div className="envelope-piece date-card"><img src={asset('envelope-card')} alt="Save the Date 25.07.26" /></div>
+    <div className="envelope-piece tilted"><img src={asset('envelope-photo-tilt')} alt="White roses flatlay" /></div>
+    <div className="envelope-piece oval"><img src={asset('envelope-photo-oval')} alt="Nikkah marriage contract" /></div>
+    <div className="envelope-piece badge"><img src={asset('envelope-badge')} alt="Nihal &amp; Aqila badge" /></div>
+    <div className="envelope-piece date-card"><img src={asset('envelope-card')} alt="Save the Date 14.11.26" /></div>
     <img className="envelope-layer envelope-front" src={asset('envelope-front')} alt="" />
   </div></section>;
 }
@@ -69,13 +69,17 @@ export default function Invitation() {
   return <main className="paper-bg"><h1 className="sr-only">Nihal & Aqila — Wedding Invitation</h1>
     <div className="petals" aria-hidden="true">{Array.from({ length: 14 }, (_, i) => <span key={i} style={{ left: `${(i * 37 + 16) % 100}%`, width: `${9 + i % 9}px`, height: `${6 + i % 5}px`, animationDelay: `${(i * 1.7) % 12}s`, animationDuration: `${15 + i % 12}s` } as CSSProperties} />)}</div>
     <div className="invitation">
-      <Fade delay={300} className="monogram"><img src={asset('logo-2')} alt="Mashoor & Mirza monogram" /></Fade>
-      <Fade delay={600} className="groom-parents"><p>ADV. NIHAL BIN NOUSHAD<br />S/O Adv. PC NOUSHAD & Mrs. FATHIMA SHYMA</p></Fade>
-      <Fade delay={900} className="names"><img src={asset('names')} alt="Mashoor & Mirza" /></Fade>
-      <Fade delay={1200} className="bride-parents"><p>ADV. AQILA SHERIN<br />D/O MUJEEB C K & Mrs. FOUSIYA K K</p></Fade>
-      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal & Aqila Arabic calligraphy monogram" /></div></div></Fade>
+      <Fade delay={300} className="monogram"><img src={asset('logo-2')} alt="Nihal &amp; Aqila monogram" /></Fade>
+      <Fade delay={600} className="parent-details groom-parents"><p>S/O Adv. PC NOUSHAD &amp; Mrs. FATHIMA SHYMA</p></Fade>
+      <Fade delay={900} className="couple-names-block">
+        <h2 className="couple-name">ADV. NIHAL BIN NOUSHAD</h2>
+        <span className="couple-ampersand">&amp;</span>
+        <h2 className="couple-name">ADV. AQILA SHERIN</h2>
+      </Fade>
+      <Fade delay={1200} className="parent-details bride-parents"><p>D/O MUJEEB C K &amp; Mrs. FOUSIYA K K</p></Fade>
+      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" /></div></div></Fade>
       <div className="lace-panel"><img className="lace-art" src={asset('lace3')} alt="" aria-hidden="true" /><div className="event-content">
-        <Fade delay={1800} className="event-date"><img src={asset('date')} alt="July 25, 2026" /></Fade>
+        <Fade delay={1800} className="event-date"><h3 className="event-date-text">NOVEMBER 14, 2026</h3></Fade>
         <Fade delay={2100} className="nikkah-details"><p className="event-copy">NIKKAH ON NOV 14, 2026 AT <span className="time">11:00</span> AM,<br />TOWN BANK AUDITORIUM, THALASSERY</p></Fade>
         <Fade delay={2200} className="location"><a className="invitation-button" href="https://www.google.com/maps/search/?api=1&query=Town+Bank+Auditorium+Thalassery" target="_blank" rel="noopener noreferrer"><MapPin size={16} strokeWidth={1.5} />NIKKAH LOCATION</a></Fade>
         <Fade delay={2700} className="countdown-wrap"><Countdown /></Fade>
@@ -83,7 +87,6 @@ export default function Invitation() {
       <Fade delay={3150} className="wishes-section"><Wishes /><p className="honour-text">We would be honoured by your presence and prayers as we begin this new chapter.</p><p>WE SEEK YOUR DUAS AND WARMLY<br />INVITE YOU TO CELEBRATE THIS<br />SPECIAL OCCASION WITH US.</p></Fade>
       <Fade delay={3150} className="dua"><img src={asset('dua')} alt="Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair" /></Fade>
       <Envelope />
-      <Fade delay={3300} className="credit"><a href="https://www.instagram.com/loymir_?igsh=MWs1am9rbDBlbWdsMQ==" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><path d="M17.5 6.5h.01" /></svg>@LOYMIR E-INVITES</a></Fade>
     </div>
   </main>;
 }
