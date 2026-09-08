@@ -91,10 +91,8 @@ export default function Invitation() {
             </defs>
             {/* Outer thin gold ring */}
             <circle cx="50" cy="50" r="48.5" fill="none" stroke="url(#gld)" strokeWidth="0.85" />
-            {/* Thick white/cream inner ring — creates the raised separation */}
-            <circle cx="50" cy="50" r="42.5" fill="none" stroke="rgba(254,252,246,0.97)" strokeWidth="5.5" />
-            {/* Inner thin gold accent ring */}
-            <circle cx="50" cy="50" r="39.8" fill="none" stroke="url(#gld)" strokeWidth="0.55" opacity="0.7" />
+            {/* Inner thin gold ring */}
+            <circle cx="50" cy="50" r="40" fill="none" stroke="url(#gld)" strokeWidth="0.6" opacity="0.75" />
           </svg>
           {/* Calligraphy — multiply blend lets gold float over rings */}
           <div className="calligraphy-img-wrap">
