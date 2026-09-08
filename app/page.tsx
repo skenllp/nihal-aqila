@@ -80,8 +80,6 @@ export default function Invitation() {
       <Fade delay={1200} className="parent-details bride-parents"><p>D/O MUJEEB C K &amp; Mrs. FOUSIYA K K</p></Fade>
       <Fade delay={1500} className="portrait">
         <div className="portrait-frame">
-          {/* Cream circle background */}
-          <div className="calli-bg" aria-hidden="true" />
           {/* Decorative rings SVG */}
           <svg className="portrait-rings-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
