@@ -78,7 +78,46 @@ export default function Invitation() {
         <h2 className="couple-name">Adv. Aqila Sherin</h2>
       </Fade>
       <Fade delay={1200} className="parent-details bride-parents"><p>D/O MUJEEB C K &amp; Mrs. FOUSIYA K K</p></Fade>
-      <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-ring outermost" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" /></div></div></Fade>
+      <Fade delay={1500} className="portrait">
+        <div className="portrait-frame">
+          {/* Cream circle background */}
+          <div className="calli-bg" aria-hidden="true" />
+          {/* Decorative rings SVG */}
+          <svg className="portrait-rings-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="gld" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#c8a458" />
+                <stop offset="45%" stopColor="#eacf7c" />
+                <stop offset="100%" stopColor="#a07832" />
+              </linearGradient>
+            </defs>
+            {/* Outer thin gold ring */}
+            <circle cx="50" cy="50" r="48.5" fill="none" stroke="url(#gld)" strokeWidth="0.85" />
+            {/* Thick white/cream inner ring — creates the raised separation */}
+            <circle cx="50" cy="50" r="42.5" fill="none" stroke="rgba(254,252,246,0.97)" strokeWidth="5.5" />
+            {/* Inner thin gold accent ring */}
+            <circle cx="50" cy="50" r="39.8" fill="none" stroke="url(#gld)" strokeWidth="0.55" opacity="0.7" />
+          </svg>
+          {/* Calligraphy — multiply blend lets gold float over rings */}
+          <div className="calligraphy-img-wrap">
+            <img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" />
+          </div>
+          {/* Stars on top */}
+          <svg className="portrait-stars-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="gld2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#c8a458" />
+                <stop offset="50%" stopColor="#eacf7c" />
+                <stop offset="100%" stopColor="#a07832" />
+              </linearGradient>
+            </defs>
+            {/* Top 4-pointed star */}
+            <path d="M50 -5.5 L51.5 1.5 L58.5 3 L51.5 4.5 L50 11.5 L48.5 4.5 L41.5 3 L48.5 1.5 Z" fill="url(#gld2)" />
+            {/* Bottom 4-pointed star */}
+            <path d="M50 88.5 L51.5 95.5 L58.5 97 L51.5 98.5 L50 105.5 L48.5 98.5 L41.5 97 L48.5 95.5 Z" fill="url(#gld2)" />
+          </svg>
+        </div>
+      </Fade>
       <div className="lace-panel"><img className="lace-art" src={asset('lace3')} alt="" aria-hidden="true" /><div className="event-content">
         <Fade delay={1800} className="event-date"><h3 className="event-date-text">NOVEMBER 14, 2026</h3></Fade>
         <Fade delay={2100} className="nikkah-details"><p className="event-copy">NIKKAH ON NOV 14, 2026 AT <span className="time">11:00</span> AM,<br />TOWN BANK AUDITORIUM, THALASSERY</p></Fade>

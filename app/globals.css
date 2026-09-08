@@ -50,89 +50,54 @@ a { color: inherit; text-decoration: none; }
 .portrait { position: relative; z-index: 20; display: flex; justify-content: center; margin-top: 48px; }
 .portrait-frame {
   position: relative;
-  width: 68%;
-  max-width: 240px;
+  width: 74%;
+  max-width: 260px;
+  aspect-ratio: 1/1;
 }
-/* Gold ring system */
-.portrait-ring {
+/* White circle fill behind calligraphy */
+.calli-bg {
   position: absolute;
-  border-radius: 100%;
-  pointer-events: none;
-}
-.portrait-ring.inner {
-  inset: -12px;
-  border: 1.5px solid transparent;
-  background: linear-gradient(135deg, oklch(72% .12 72), oklch(55% .09 60), oklch(78% .14 74), oklch(50% .08 58)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  box-shadow: 0 0 12px 2px oklch(72% .12 72 / .25), inset 0 0 8px oklch(72% .12 72 / .15);
-}
-.portrait-ring.outer {
-  inset: -26px;
-  border: 1px solid transparent;
-  background: linear-gradient(135deg, oklch(72% .12 72 / .6), oklch(45% .07 58 / .3), oklch(78% .14 74 / .6), oklch(45% .07 58 / .3)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-}
-.portrait-ring.outermost {
-  inset: -40px;
-  border: 0.75px solid oklch(72% .12 72 / .28);
-  border-radius: 100%;
-  background: none;
-  -webkit-mask: none;
-  mask: none;
-  box-shadow: 0 0 18px 3px oklch(72% .12 72 / .12);
-  animation: ring-glow 4s ease-in-out infinite;
-}
-@keyframes ring-glow {
-  0%, 100% { box-shadow: 0 0 18px 3px oklch(72% .12 72 / .12); }
-  50% { box-shadow: 0 0 28px 6px oklch(72% .12 72 / .22); }
-}
-/* Ornamental corner diamonds */
-.portrait-frame::before,
-.portrait-frame::after {
-  content: '';
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  background: linear-gradient(135deg, oklch(76% .13 72), oklch(55% .09 60));
-  border-radius: 1px;
-  transform: rotate(45deg);
-  pointer-events: none;
-  z-index: 10;
-  box-shadow: 0 0 6px oklch(72% .12 72 / .45);
-}
-.portrait-frame::before { top: -34px; left: 50%; margin-left: -4.5px; }
-.portrait-frame::after  { bottom: -34px; left: 50%; margin-left: -4.5px; }
-.portrait-crop {
-  position: relative;
-  overflow: hidden;
+  inset: 4%;
   border-radius: 50%;
-  box-shadow:
-    0 24px 70px -20px rgba(90,58,26,.55),
-    0 0 0 2px oklch(72% .12 72 / .35),
-    inset 0 0 40px 10px rgba(245,237,220,.55),
-    inset 0 0 12px 2px rgba(180,140,70,.12);
+  background: radial-gradient(ellipse at 54% 48%, #fefcf7 30%, #f8f0e0 100%);
+  box-shadow: 0 18px 55px -14px rgba(90,58,26,.42);
+  z-index: 1;
 }
-.portrait-crop::after {
-  content: '';
+/* Rings SVG - sits behind calligraphy */
+.portrait-rings-svg {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, transparent 42%, rgba(240,229,208,.55) 100%);
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 2;
+  overflow: visible;
 }
-.portrait-crop img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transform: scale(1.08); }
-.calligraphy-crop img {
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  transform: scale(2.1) translateY(4%);
-  background: radial-gradient(ellipse at 55% 52%, #fdfaf5 35%, #f2e8d8 100%);
-  padding: 0;
-  transform-origin: center center;
+/* Calligraphy image — multiply blend removes white bg, gold overflows rings */
+.calligraphy-img-wrap {
+  position: absolute;
+  inset: -18%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  mix-blend-mode: multiply;
+}
+.calligraphy-img-wrap img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  display: block;
+}
+/* Stars SVG - sits on top of everything */
+.portrait-stars-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 6;
+  overflow: visible;
 }
 .lace-panel { position: relative; margin-top: -46.67%; width: 115%; margin-inline: -7.5%; }
 .lace-art { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; pointer-events: none; animation: soft-in 1.2s ease both; }
@@ -212,7 +177,7 @@ a { color: inherit; text-decoration: none; }
  .location, .wishes-section { max-width: 380px; }
  .honour-text { font-size: 18.5px !important; }
  .invitation-button { font-size: 16px; }
- .portrait-frame { width: 64%; max-width: 230px; }
+ .portrait-frame { width: 70%; max-width: 250px; }
  .countdown { gap: 20px; }
  .count-tile { width: 80px; height: 80px; }
  .count-tile span { font-size: 30px; line-height: 36px; }
