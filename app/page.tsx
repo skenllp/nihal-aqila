@@ -76,9 +76,9 @@ export default function Invitation() {
       <Fade delay={300} className="monogram"><img src={asset('logo-2')} alt="Nihal &amp; Aqila monogram" /></Fade>
       <Fade delay={600} className="parent-details groom-parents"><p>S/O Adv. PC NOUSHAD &amp; Mrs. FATHIMA SHYMA</p></Fade>
       <Fade delay={900} className="couple-names-block">
-        <h2 className="couple-name">ADV. NIHAL BIN NOUSHAD</h2>
+        <h2 className="couple-name">Adv. Nihal Bin Noushad</h2>
         <span className="couple-ampersand">&amp;</span>
-        <h2 className="couple-name">ADV. AQILA SHERIN</h2>
+        <h2 className="couple-name">Adv. Aqila Sherin</h2>
       </Fade>
       <Fade delay={1200} className="parent-details bride-parents"><p>D/O MUJEEB C K &amp; Mrs. FOUSIYA K K</p></Fade>
       <Fade delay={1500} className="portrait"><div className="portrait-frame"><div className="portrait-ring inner" /><div className="portrait-ring outer" /><div className="portrait-crop calligraphy-crop"><img src="/assets/arabic-monogram.jpg" alt="Nihal &amp; Aqila Arabic calligraphy monogram" /></div></div></Fade>
