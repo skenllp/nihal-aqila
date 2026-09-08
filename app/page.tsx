@@ -62,9 +62,6 @@ function Envelope() {
   }, []);
   return <section ref={ref} className={`envelope ${visible ? 'revealed' : ''}`} aria-label="Save the date keepsake"><div className="envelope-scene">
     <img className="envelope-layer envelope-back" src={asset('envelope-back')} alt="" />
-    <div className="envelope-piece tilted"><img src={asset('envelope-photo-tilt')} alt="White roses flatlay" /></div>
-    <div className="envelope-piece oval"><img src={asset('envelope-photo-oval')} alt="Nikkah marriage contract" /></div>
-    <div className="envelope-piece badge"><img src={asset('envelope-badge')} alt="Nihal &amp; Aqila badge" /></div>
     <div className="envelope-piece date-card"><img src={asset('envelope-card')} alt="Save the Date 14.11.26" /></div>
     <img className="envelope-layer envelope-front" src={asset('envelope-front')} alt="" />
   </div></section>;
