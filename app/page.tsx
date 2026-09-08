@@ -28,22 +28,26 @@ function Wishes() {
     const wishes = String(data.get('wishes') || '').trim();
     if (!name || !wishes) { setError('Please enter your name and wishes.'); return; }
     try {
-      const entries = JSON.parse(localStorage.getItem('mnm-wishes') || '[]');
-      localStorage.setItem('mnm-wishes', JSON.stringify([...entries, { name, wishes, createdAt: new Date().toISOString() }]));
-      setSaved(true); setError('');
-    } catch { setError('Your wishes could not be saved on this device. Please try again.'); }
+      const entries = JSON.parse(localStorage.getItem('nihal-aqila-wishes') || '[]');
+      localStorage.setItem('nihal-aqila-wishes', JSON.stringify([...entries, { name, wishes, createdAt: new Date().toISOString() }]));
+    } catch {}
+    const message = `*Wedding Wishes for Adv. Nihal & Adv. Aqila* 💍✨\n\n*From:* ${name}\n\n*Wishes:* ${wishes}`;
+    const whatsappUrl = `https://wa.me/918281081480?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    setSaved(true);
+    setError('');
   }
   return <Dialog open={open} onOpenChange={(value) => { setOpen(value); if (value) { setSaved(false); setError(''); } }}>
     <DialogTrigger className="invitation-button primary"><Heart size={16} strokeWidth={1.5} />SEND YOUR WISHES</DialogTrigger>
     <DialogContent className="wishes-dialog" showCloseButton={false}>
       <div className="dialog-ornament" aria-hidden="true"><span /><i /><span /></div>
       <DialogTitle className="wishes-title">{saved ? 'Thank You for Your Wishes' : 'Send Your Wishes'}</DialogTitle>
-      <DialogDescription className="wishes-description">{saved ? 'Your blessing has been saved on this device.' : 'A blessing from you means the world to us.'}</DialogDescription>
-      {saved ? <div className="wishes-success"><Heart size={28} strokeWidth={1.2} /><p>This preview saves wishes locally; they are not sent to the couple.</p><DialogClose className="invitation-button primary">CLOSE</DialogClose></div> : <form onSubmit={submit} className="wishes-form">
+      <DialogDescription className="wishes-description">{saved ? 'Your blessing has been forwarded to the couple on WhatsApp.' : 'A blessing from you means the world to us.'}</DialogDescription>
+      {saved ? <div className="wishes-success"><Heart size={28} strokeWidth={1.2} /><p>Your blessings have been opened in WhatsApp to send to the couple.</p><DialogClose className="invitation-button primary">CLOSE</DialogClose></div> : <form onSubmit={submit} className="wishes-form">
         <div><label htmlFor="full-name">FULL NAME</label><input id="full-name" name="full_name" autoComplete="name" maxLength={80} placeholder="Your name" required /></div>
         <div><label htmlFor="wishes">YOUR WISHES</label><textarea id="wishes" name="wishes" rows={5} maxLength={1000} placeholder="Write your blessings for the couple…" required /></div>
         {error && <p role="alert" className="form-error">{error}</p>}
-        <div className="form-actions"><button type="submit" className="invitation-button primary">SEND WISHES</button><DialogClose className="invitation-button">CLOSE</DialogClose></div>
+        <div className="form-actions"><button type="submit" className="invitation-button primary">SEND VIA WHATSAPP</button><DialogClose className="invitation-button">CLOSE</DialogClose></div>
       </form>}
     </DialogContent>
   </Dialog>;
