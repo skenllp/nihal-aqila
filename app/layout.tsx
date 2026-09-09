@@ -1,5 +1,29 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
+
+const edwardianScript = localFont({
+  src: [
+    {
+      path: '../public/fonts/EdwardianScriptITC.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/EdwardianScriptITC.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/EdwardianScriptITC.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-edwardian',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nihal-aqila.vercel.app'),
   title: 'Nihal & Aqila · Wedding Invitation · 14 November 2026',
@@ -23,11 +47,11 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={edwardianScript.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Pinyon+Script&family=Alex+Brush&family=Sedan:ital@0;1&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Sedan:ital@0;1&display=swap" rel="stylesheet" />
       </head>
       <body>{children}</body>
     </html>
